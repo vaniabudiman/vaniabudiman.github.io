@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Art | Vania Budiman</title>
+
+
+
+	<link rel="stylesheet" href="css/style.css" type="text/css">
+	<link rel="stylesheet" href="css/normalise.css" type="text/css">
+	<script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+	<script type="text/javascript" src="js/skillsbar.js"></script>
+
+	<!-- jQuery 1.7.2+ or Zepto.js 1.0+ -->
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script> 
+
+	<!-- Magnific Popup core JS file -->
+	<script src="js/jquery.magnific-popup.js"></script> 
+
+
+	<link rel="icon" 
+      type="image/png" 
+      href="images/favicon.jpg">
+
+
+</head>
+<body>
+	<div id="wrapper">
+	<div id="header">
+		<div>
+			<div id="logo">
+				<a href="index.html"><img src="images/website-logo.png" alt="LOGO"></a>
+			</div>
+			<ul id="navigation">
+				<li>
+					<a href="index.html">Home</a>
+				</li>
+				<li>
+					<a href="projects.html">Projects</a>
+				</li>
+				<li class="selected">
+					<a href="art.html">Art</a>
+				</li>
+				<li>
+					<a href="about.html">About</a>
+				</li>
+				<li>
+					<a href="http://ubclife.tumblr.com/" target="_blank">Blog</a>
+				</li>
+				<li>
+					<a href="contact.html">Contact</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div id="contents">
+		<div>
+			<div class="body" id="artwork">
+				<div id="main">
+
+					<h1>Artwork</h1>
+					<h4>Adobe Illustrator & Photoshop CS6</h4>
+					<p>
+						Click on the image thumbnail to view it in an enlarged size.
+					</p>
+
+					<div class="popupgallery">
+				    <a href="images/car.png" title="Stitched Car"><img src="images/car.png" width="300" height="300"/></a>
+				    <a href="images/scenery.png" title="Cartoon Scenery"><img src="images/scenery.png" width="300" height="300"/></a>
+				    <a href="images/fox.png" title="Little Fox"><img src="images/fox.png" width="300" height="300"/></a>
+				    <a href="images/halloween_kitty.png" title="Halloween Kitty"><img src="images/halloween_kitty.png" width="300" height="300"/></a>
+				     <a href="images/iamcanadian.png" title="I Am Canadian"><img src="images/iamcanadian.png" width="300" height="300"/></a>
+
+
+					</div>
+				<script type="text/javascript"> 
+					$(document).ready(function() {
+
+						$('.popupgallery').magnificPopup({ 
+							type: 'image', 
+							delegate: 'a', 
+							closeOnContentClick: true, 
+							image: { 
+							verticalFit: false 
+							} 
+						}); 
+					});
+
+				</script>
+				</div>
+					</p>
+
+				</div>
+			</div>
+		</div>
+		<div id="footer">
+			<div>
+				<div id="links">
+					<ul class="navigation">
+						<li>
+							<a href="index.html">Home</a>
+						</li>
+						<li>
+							<a href="projects.html">Projects</a>
+						</li>
+						<li>
+							<a href="art.html">Art</a>
+						</li>
+						<li>
+							<a href="about.html">About</a>
+						</li>
+						<li>
+							<a href="http://ubclife.tumblr.com" target="_blank">Blog</a>
+						</li>
+						<li>
+							<a href="contact.html">Contact</a>
+						</li>
+					</ul>
+					<p id="footnote">
+						Copyright © 2015 Vania Budiman
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

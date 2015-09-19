@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Vania Budiman | Portfolio</title>
+	<link rel="stylesheet" href="css/style.css" type="text/css">
+	<link rel="stylesheet" href="css/normalise.css" type="text/css">
+	<link rel="icon" 
+      type="image/png" 
+      href="images/favicon.jpg">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script>
+	   function cycleImages(){
+      	var $active = $('#cycler .active');
+     	var $next = ($active.next().length > 0) ? $active.next() : $('#cycler img:first');
+      	$next.css('z-index',2);//move the next image up the pile
+      	$active.fadeOut(1500,function(){//fade out the top image
+	  	$active.css('z-index',1).show().removeClass('active');//reset the z-index and unhide the image
+          $next.css('z-index',3).addClass('active');//make the next image the top one
+      });
+    }
+
+		$(document).ready(function(){
+		// run every 7s
+		setInterval('cycleImages()', 7000);
+		})
+
+	</script>
+	<script>
+	     var sourceSwap = function () {
+        var $this = $(this);
+        var newSource = $this.data('alt-src');
+        $this.data('alt-src', $this.attr('src'));
+        $this.attr('src', newSource);
+    }
+
+    $(function() {
+        $('img[data-alt-src]').each(function() { 
+            new Image().src = $(this).data('alt-src'); 
+        }).hover(sourceSwap, sourceSwap); 
+    });
+	</script>
+</head>
+<body>
+	<div id="wrapper">
+	<div id="header">
+		<div>
+			<div id="logo">
+				<a href="index.html"><img src="images/website-logo.png" alt="LOGO"></a>
+			</div>
+			<ul id="navigation">
+				<li class="selected">
+					<a href="index.html">Home</a>
+				</li>
+				<li>
+					<a href="projects.html">Projects</a>
+				</li>
+				<li>
+					<a href="about.html">About</a>
+				</li>
+				<li>
+					<a href="http://ubclife.tumblr.com/" target="_blank">Blog</a>
+				</li>
+				<li>
+					<a href="contact.html">Contact</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div id="contents">
+		<div>
+			<div class="body">
+				<div id="abox">
+						<div id="cycler">
+							<img class="active" src="images/finallogo.jpg" />
+							<img src="images/finallogo2.jpg" />
+						</div>
+					<span class="info"><em></em> </span>
+					<div class="details">
+						<p>
+						<h1>A passion for logical<br>&amp; artistic creativity.<br></h1>
+						<p>
+							<p>
+							I am a fourth year Computer Science student from the University of British Columbia.
+						</p>
+					</div>
+				</div>
+				<ul id="featured">
+					<li>
+						<div>
+							<img data-alt-src="images/soft-dev-hover.png" src="images/a1.jpg" />
+						</div>
+						<div class="details">
+							<h4>Software Development</h4>
+							<p>
+								From making websites to mobile apps, I've gained a wide range of coding skills.
+							</p>
+						</div>
+					</li>
+					<li class="ui-design">
+						<div>
+							<img data-alt-src="images/photoshop-logo-hover.png" src="images/a2.jpg" />
+						</div>
+						<div class="details">
+							<h4>UI Design</h4>
+							<p>
+								Designing simple, beautiful and easy-to-use interfaces is a responsibility I value.
+							</p>
+						</div>
+					</li>
+					<li class="ux-research">
+						<div>
+							<img data-alt-src="images/ux-research-hover.png" src="images/a3.jpg" />
+						</div>
+						<div class="details">
+							<h4>UX Research</h4>
+							<p>
+								As I am interested in HCI, I am currently pursuing a minor in Psychology.
+							</p>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div id="footer">
+		<div>
+			<div id="links">
+			<ul class="navigation">
+				<li>
+					<a href="index.html">Home</a>
+				</li>
+				<li>
+					<a href="projects.html">Projects</a>
+				</li>
+				<li>
+					<a href="about.html">About</a>
+				</li>
+				<li>
+					<a href="http://ubclife.tumblr.com/" target="_blank">Blog</a>
+				</li>
+				<li>
+					<a href="contact.html">Contact</a>
+				</li>
+			</ul>
+			<p id="footnote">
+				Copyright © 2015 Vania Budiman
+			</p>
+		</div>
+	</div>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-54510979-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</script>
+</div>
+</body>
+</html>
