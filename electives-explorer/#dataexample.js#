@@ -1,0 +1,93 @@
+var w = 150,
+    	h = 150;
+ 
+var colorscale = d3.scale.category10();
+ 
+//Legend titles
+var LegendOptions = ['Female','Male', 'placeholder'];
+ 
+//Data
+var d = [
+		  [
+			{axis:"Open",value:0.381527989},
+			{axis:"Conscientious",value:1.084155362},
+			{axis:"Extraverted",value:4.862187406},
+			{axis:"Agreeable",value:4.212807566},
+			{axis:"Neurotic",value:3.45626897},
+		  ],[
+			{axis:"Open",value:3.659273892},
+			{axis:"Conscientious",value:2.553173615},
+			{axis:"Extraverted",value:3.216533419},
+			{axis:"Agreeable",value:0.391927092},
+			{axis:"Neurotic",value:3.918313498},
+		  ],[
+			{axis:"Open",value:5},
+			{axis:"Conscientious",value:5},
+			{axis:"Extraverted",value:5},
+			{axis:"Agreeable",value:5},
+			{axis:"Neurotic",value:5},
+		  ]
+		];
+ 
+//Options for the Radar chart, other than default
+var mycfg = {
+  w: w,
+  h: h,
+  maxValue: 0.6,
+  levels: 5,
+  ExtraWidthX: 300
+}
+ 
+//Call function to draw the Radar chart
+//Will expect that data is in %'s
+RadarChart.draw('#chart', d, mycfg);
+ 
+////////////////////////////////////////////
+/////////// Initiate legend ////////////////
+////////////////////////////////////////////
+ 
+var svg = d3.select('#body')
+	.selectAll('svg')
+	.append('svg')
+	.attr("width", w+300)
+	.attr("height", h+300)
+ 
+//Create the title for the legend
+var text = svg.append("text")
+	.attr("class", "title")
+	.attr("x", w+(w/2) )
+	.attr("y", h+80)
+	.attr("text-anchor", "middle")
+	.attr("font-size", "18px")
+	.attr("font-weight", 500)
+	.text("Anakin Skywalker");
+		
+// //Initiate Legend	
+// var legend = svg.append("g")
+// 	.attr("class", "legend")
+// 	.attr("height", 100)
+// 	.attr("width", 200)
+// 	.attr('transform', 'translate(90,20)') 
+// 	;
+// 	//Create colour squares
+// 	legend.selectAll('rect')
+// 	  .data(LegendOptions)
+// 	  .enter()
+// 	  .append("rect")
+// 	  .attr("x", w - 65)
+// 	  .attr("y", function(d, i){ return i * 20;})
+// 	  .attr("width", 10)
+// 	  .attr("height", 10)
+// 	  .style("fill", function(d, i){ return colorscale(i);})
+// 	  ;
+// 	//Create text next to squares
+// 	legend.selectAll('text')
+// 	  .data(LegendOptions)
+// 	  .enter()
+// 	  .append("text")
+// 	  .attr("x", w - 52)
+// 	  .attr("y", function(d, i){ return i * 20 + 9;})
+// 	  .attr("font-size", "11px")
+// 	  .attr("fill", "#737373")
+// 	  .text(function(d) { return d; })
+// 	  ;	

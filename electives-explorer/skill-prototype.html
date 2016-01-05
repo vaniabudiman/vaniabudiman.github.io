@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>UBC SSC Electives Explorer</title>
+        <meta content="text/html; charset=UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- CSS -->
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.0/css/select2.min.css">
+        <link rel="stylesheet" href="css/prototype.css">
+    </head>
+
+    <body>
+
+        <!-- LEFT PANE -->
+        <div id="left-pane" class="col-md-6">
+
+            <!-- SEARCH FORM -->
+            <div id="search-form">
+                <h3>Search</h3>
+
+                <!-- SEARCH FORM ROW 1 -->
+                <div class="row">
+
+                    <!-- Subject -->
+                    <div class="col-md-4">
+                        <select id="search-subject" name="Subject" multiple style="width: 100%;">
+                            <option>ANTH : Anthropology</option>
+                            <option>ASTR : Astronomy</option>
+                            <option>ASTU : Arts Studies</option>
+                            <option>BIOL : Biology</option>
+                            <option>COMM : Commerce</option>
+                            <option>CPSC : Computer Science</option>
+                            <option>EOSC : Earth and Ocean Sciences</option>
+                            <option>FNH  : Food, Nutrition, and Health</option>
+                            <option>GOEG : Geography</option>
+                            <option>HIST : History</option>
+                            <option>POLI : Political Science</option>
+                            <option>THTR : Theatre</option>
+                        </select>
+                    </div>
+
+                    <!-- Faculty -->
+                    <div class="col-md-4">
+                        <select id="search-faculty" name="Faculty" multiple style="width: 100%;">
+                            <!-- <option>Applied Science</option> -->
+                            <!-- <option>Architecture and Landscape Architecture</option> -->
+                            <option>Arts</option>
+                            <!-- <option>Audiology and Speech Sciences</option> -->
+                            <option>Business (Sauder)</option>
+                            <!-- <option>Community and Regional Planning</option> -->
+                            <!-- <option>Continuing Studies</option> -->
+                            <!-- <option>Dentistry</option> -->
+                            <!-- <option>Education</option> -->
+                            <!-- <option>Environmental Health</option> -->
+                            <!-- <option>Forestry</option> -->
+                            <!-- <option>Graduate and Postdoctoral Studies</option> -->
+                            <!-- <option>Health Disciplines</option> -->
+                            <!-- <option>Journalism</option> -->
+                            <!-- <option>Kinesiology</option> -->
+                            <option>Land and Food Systems</option>
+                            <!-- <option>Law (Allard)</option> -->
+                            <!-- <option>Library, Archival and Information Studies</option> -->
+                            <!-- <option>Medicine</option> -->
+                            <!-- <option>Music</option> -->
+                            <!-- <option>Nursing</option> -->
+                            <!-- <option>Pharmaceutical Sciences</option> -->
+                            <!-- <option>Population and Public Health</option> -->
+                            <option>Science</option>
+                            <!-- <option>Social Work</option> -->
+                            <!-- <option>UBC Vantage College</option> -->
+                            <!-- <option>Vancouver School of Economics</option> -->
+                        </select>
+                    </div>
+
+                    <!-- Year Level -->
+                    <div class="col-md-4">
+                        <select id="search-year" name="Year Level" multiple style="width: 100%;">
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <!-- <option>5+</option> -->
+                        </select>
+                    </div>
+                </div>
+                <!-- /SEARCH FORM ROW 1 -->
+
+                <br>
+
+                <!-- SEARCH FORM ROW 2 -->
+                <div class="row">
+
+                    <!-- Skills -->
+                    <div class="col-md-4">
+                        <select id="search-skill" name="Skills" multiple style="width: 100%;">
+                            <optgroup label="Communication">
+                                <option value="writing">Writing</option>
+                                <option value="collaboration">Collaboration</option>
+                            </optgroup>
+                            <optgroup label="Logic">
+                                <option value="tech">Computing/Technology</option>
+                                <option value="math">Math</option>
+                            </optgroup>
+                            <optgroup label="Research">
+                                <option value="fieldmethods">Field Methods</option>
+                                <option value="experimentalmethods">Experimental Methods</option>
+                            </optgroup>
+                            <optgroup label="Creativity">
+                                <option value="art">Art</option>
+                                <option value="performance">Music/Performance</option>
+                            </optgroup>
+                            <optgroup label="Culture">
+                                <option value="language">Language</option>
+                                <option value="ethnic studies">Ethnic Studies</option>
+                            </optgroup>
+                        </select>
+                    </div>
+
+                    <!-- Fits Schedule -->
+                    <div class="col-md-4 check">
+                        <label for="fits-schedule">Fits Schedule</label>
+                        <br>
+                        <input type="checkbox" id="fits-schedule" name="fits-schedule" disabled></input>
+                    </div>
+
+                    <!-- Eligible -->
+                    <div class="col-md-4 check">
+                        <label for="eligible">Eligible</label>
+                        <br>
+                        <input type="checkbox" id="eligible" name="eligible"></input>
+                    </div>
+                </div>
+                <!-- /SEARCH FORM ROW 2 -->
+
+                <br>
+
+                <!-- SEARCH FORM ROW 3 -->
+                <div class="row">
+                    <div class="panel-group col-md-12" id="accordion" role="tablist" aria-multiselectable="true">
+                        <div class="panel panel-default">
+                            <div class="panel-heading" role="tab" id="more-filters-heading">
+                                <h4 class="panel-title">
+                                    <a role="button" data-toggle="collapse" data-parent="#accordion" href="#more-filters" aria-expanded="true" aria-controls="more-filters">+ More Filters</a>
+                                </h4>
+                            </div>
+                            <div id="more-filters" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="more-filters-heading">
+                                <br>
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <select id="search-credits" name="Credits" multiple style="width: 100%;" disabled>
+                                            <option>1</option>
+                                            <option>2</option>
+                                            <option>3</option>
+                                            <option>4</option>
+                                            <option>5</option>
+                                            <option>6</option>
+                                            <option>7</option>
+                                            <option>8</option>
+                                            <option>9</option>
+                                            <option>10</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <select id="search-term" name="Term" multiple style="width: 100%;" disabled>
+                                            <option>1</option>
+                                            <option>2</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <select id="search-status" name="Status" multiple style="width: 100%;" disabled>
+                                            <option>Has seats available</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <select id="search-time" name="Available Times" multiple style="width: 100%;" disabled>
+                                            <option>00:00</option>
+                                            <option>00:30</option>
+                                            <option>01:00</option>
+                                            <option>01:30</option>
+                                            <option>02:00</option>
+                                            <option>02:30</option>
+                                            <option>03:00</option>
+                                            <option>03:30</option>
+                                            <option>04:00</option>
+                                            <option>04:30</option>
+                                            <option>05:00</option>
+                                            <option>05:30</option>
+                                            <option>06:00</option>
+                                            <option>06:30</option>
+                                            <option>07:00</option>
+                                            <option>07:30</option>
+                                            <option>08:00</option>
+                                            <option>08:30</option>
+                                            <option>09:00</option>
+                                            <option>09:30</option>
+                                            <option>10:00</option>
+                                            <option>10:30</option>
+                                            <option>11:00</option>
+                                            <option>11:30</option>
+                                            <option>12:00</option>
+                                            <option>12:30</option>
+                                            <option>13:00</option>
+                                            <option>13:30</option>
+                                            <option>14:00</option>
+                                            <option>14:30</option>
+                                            <option>15:00</option>
+                                            <option>15:30</option>
+                                            <option>16:00</option>
+                                            <option>16:30</option>
+                                            <option>17:00</option>
+                                            <option>17:30</option>
+                                            <option>18:00</option>
+                                            <option>18:30</option>
+                                            <option>19:00</option>
+                                            <option>19:30</option>
+                                            <option>20:00</option>
+                                            <option>20:30</option>
+                                            <option>21:00</option>
+                                            <option>21:30</option>
+                                            <option>22:00</option>
+                                            <option>22:30</option>
+                                            <option>23:00</option>
+                                            <option>23:30</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <select id="search-days" name="Available Days" multiple style="width: 100%;" disabled>
+                                            <option>Sunday</option>
+                                            <option>Monday</option>
+                                            <option>Tuesday</option>
+                                            <option>Wednesday</option>
+                                            <option>Thursday</option>
+                                            <option>Friday</option>
+                                            <option>Saturday</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="row">
+                                    <div class="col-md-4 check">
+                                        <label for="search-days-match-all">Check here if Available days must match precisely</label>
+                                        <input type="checkbox" id="search-days-match-all" name="search-days-match-all" disabled></input>
+                                    </div>
+                                    <div class="col-md-4 check">
+                                        <label for="search-cred-d-f">Return courses eligible for Credit/D/Fail only</label>
+                                        <input type="checkbox" id="search-cred-d-f" name="search-cred-d-f" disabled></input>
+                                    </div>
+                                    <div class="col-md-4 check">
+                                        <label for="search-distance">Return Distance Education courses only</label>
+                                        <input type="checkbox" id="search-distance" name="search-distance" disabled></input>
+                                    </div>
+                                </div>
+                                <br>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /SEARCH FORM ROW 3 -->
+
+                <br>
+
+                <!-- SEARCH FORM ROW 4 -->
+                <div class="row">
+                    <div class="col-md-12">
+                        <button class="btn btn-default" style="float: right;" onclick="showSearchResults(true);">Search</button>
+                    </div>
+                </div>
+                <!-- /SEARCH FORM ROW 4 -->
+                <br>
+
+            </div>
+            <!-- /SEARCH FORM -->
+
+            <!-- SEARCH RESULTS -->
+            <div id="search-results">
+                <h3>Courses</h3>
+                <span id='pre-search-message'>Please use the search menu above to find courses.</span>
+                <span id='no-results-message'>No results found, please try another search.</span>
+                <div class="table-container">
+                    <table id='search-results-table' class="table table-striped table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Course</th>
+                                <th>Term</th>
+                                <th>Days</th>
+                                <th>Time</th>
+                                <th>Credits</th>
+                                <th>Eligible</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <!-- /SEARCH RESULTS -->
+
+        <!-- RIGHT PANE-->
+        <div id="right-pane" class="col-md-6">
+            <!-- PENTAGON -->
+            <div id="pentagon" class="col-md-12">
+				<!-- Trigger the modal with a button -->
+				<div id="help-buttons-container">
+				<button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#help-modal">Help</button>
+				<button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#category-modal">Categories</button>
+				</div>
+                <h3>Skill Profile</h3>
+                <div id="body">
+                    <div id="chart">
+                    </div>
+                    <h4 id="course-name-preview"></h4>
+                </div>
+            </div>
+            <!-- /PENTAGON -->
+
+            <!-- SKILL TABS -->
+            <div id="skill-tabs" class="col-md-12">
+                <ul class="nav nav-tabs" data-tabs="tabs">
+                    <li class="active"><a id="communication-tab" data-toggle="tab" href="#communication">Communication</a></li>
+                    <li><a id="culture-tab" data-toggle="tab" href="#culture">Culture</a></li>
+                    <li><a id="creativity-tab" data-toggle="tab" href="#creativity">Creativity</a></li>
+                    <li><a id="research-tab" data-toggle="tab" href="#research" class="research-tab">Research</a></li>
+                    <li><a id="logic-tab" data-toggle="tab" href="#logic" class="logic-tab">Logic</a></li>
+                </ul>
+                <div class="tab-content">
+                    <div role="tabpanel" class="tab-pane active" id="communication">
+                        <h4>Writing <i class="glyphicon glyphicon-question-sign" rel="tooltip" title="Research writing for reports and essays" id="help-tooltip"></i></h4>
+                        <div class="progress">
+                            <div id="writing" class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="120" style="width: 0%;"></div>
+                        </div>
+                        <a data-toggle="collapse" href="#courses-writing">View courses applied to Writing</a>
+                        <div class="collapse" class="courses-skill" id="courses-writing">
+                            <ul>
+                            </ul>
+                        </div>
+                        <br>
+                        <h4>Collaboration <i class="glyphicon glyphicon-question-sign" rel="tooltip" title="Working together effectively with others" id="help-tooltip"></i></h4>
+                        <div class="progress">
+                            <div id="collaboration" class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="120" style="width: 0%;"></div>
+                        </div>
+                        <a data-toggle="collapse" href="#courses-collaboration">View courses applied to Collaboration</a>
+                        <div class="collapse" class="courses-skill" id="courses-collaboration">
+                            <ul>
+                            </ul>
+                        </div>
+                    </div>
+                    <div role="tabpanel" class="tab-pane" id="logic">
+                        <h4>Computing / Technology <i class="glyphicon glyphicon-question-sign" rel="tooltip" title="Software and hardware knowledge" id="help-tooltip"></i></h4>
+                        <div class="progress">
+                            <div id="tech" class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="120" style="width: 0%;"></div>
+                        </div>
+                        <a data-toggle="collapse" href="#courses-tech">View courses applied to Computing / Technology</a>
+                        <div class="collapse" class="courses-skill" id="courses-tech">
+                            <ul>
+                            </ul>
+                        </div>
+                        <br>
+                        <h4>Math <i class="glyphicon glyphicon-question-sign" rel="tooltip" title="Pure mathematics including calculus, linear algebra, etc." id="help-tooltip"></i></h4>
+                        <div class="progress">
+                            <div id="math" class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="120" style="width: 0%;"></div>
+                        </div>
+                        <a data-toggle="collapse" href="#courses-math">View courses applied to Math</a>
+                        <div class="collapse" class="courses-skill" id="courses-math">
+                            <ul>
+                            </ul>
+                        </div>
+                    </div>
+                    <div role="tabpanel" class="tab-pane" id="creativity">
+                        <h4>Art <i class="glyphicon glyphicon-question-sign" rel="tooltip" title="Visual and graphic arts" id="help-tooltip"></i></h4>
+                        <div class="progress">
+                            <div id="art" class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="120" style="width: 0%;"></div>
+                        </div>
+                        <a data-toggle="collapse" href="#courses-art">View courses applied to Art</a>
+                        <div class="collapse" class="courses-skill" id="courses-art">
+                            <ul>
+                            </ul>
+                        </div>
+                        <br>
+                        <h4>Music / Performance <i class="glyphicon glyphicon-question-sign" rel="tooltip" title="Performance, composition, and theatre" id="help-tooltip"></i></h4>
+                        <div class="progress">
+                            <div id="performance" class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="120" style="width: 0%;"></div>
+                        </div>
+                        <a data-toggle="collapse" href="#courses-performance">View courses applied to Music / Performance</a>
+                        <div class="collapse" class="courses-skill" id="courses-performance">
+                            <ul>
+                            </ul>
+                        </div>
+                    </div>
+                    <div role="tabpanel" class="tab-pane" id="culture">
+                        <h4>Language <i class="glyphicon glyphicon-question-sign" rel="tooltip" title="Includes languages around the world - Japanese, German, etc. and their literature" id="help-tooltip"></i></h4>
+                        <div class="progress">
+                            <div id="language" class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="120" style="width: 0%;"></div>
+                        </div>
+                        <a data-toggle="collapse" href="#courses-language">View courses applied to Language</a>
+                        <div class="collapse" class="courses-skill" id="courses-language">
+                            <ul>
+                            </ul>
+                        </div>
+                        <br>
+                        <h4>Ethnic Studies <i class="glyphicon glyphicon-question-sign" rel="tooltip" title="Knowledge of historical accounts of different cultures around the world" id="help-tooltip"></i></h4>
+                        <div class="progress">
+                            <div id="ethnicstudies" class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="120" style="width: 0%;"></div>
+                        </div>
+                        <a data-toggle="collapse" href="#courses-ethnicstudies">View courses applied to Ethnic Studies</a>
+                        <div class="collapse" class="courses-skill" id="courses-ethnicstudies">
+                            <ul>
+                            </ul>
+                        </div>
+                    </div>
+                    <div role="tabpanel" class="tab-pane" id="research">
+                        <h4>Field Methods <i class="glyphicon glyphicon-question-sign" rel="tooltip" title="Research in the field to collect data using methods such as face-to-face interviewing, telephone, and direct observation" id="help-tooltip"></i></h4>
+                        <div class="progress">
+                            <div id="fieldmethods" class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="120" style="width: 0%;"></div>
+                        </div>
+                        <a data-toggle="collapse" href="#courses-fieldmethods">View courses applied to Field Methods</a>
+                        <div class="collapse" class="courses-skill" id="courses-fieldmethods">
+                            <ul>
+                            </ul>
+                        </div>
+                        <br>
+                        <h4>Experimental Methods <i class="glyphicon glyphicon-question-sign" rel="tooltip" title="Research involving controlled observations and theory to test hypotheses" id="help-tooltip"></i></h4>
+                        <div class="progress">
+                            <div id="experimentalmethods" class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="120" style="width: 0%;"></div>
+                        </div>
+                        <a data-toggle="collapse" href="#courses-experimentalmethods">View courses applied to Experimental Methods</a>
+                        <div class="collapse" class="courses-skill" id="courses-experimentalmethods">
+                            <ul>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /SKILL TABS -->
+        </div>
+
+	<!-- MODALS -->
+		<div class="container">
+
+			<!-- CATEGORY MODAL -->
+			<div class="modal fade" id="category-modal" role="dialog">
+				<div class="modal-dialog">
+
+					<!-- Modal content-->
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal">&times;</button>
+							<h4 class="modal-title">Categories</h4>
+						</div>
+						<div class="modal-body">
+							<p>
+							<ul>
+								<li><b>Communication:</b> imparting or interchange of thoughts, opinions, or information by speech, writing, or signs.</li>
+							</ul>
+							<ul>
+								<li><b>Culture:</b> behaviours and beliefs characteristic of a particular social, ethnic, or age group.</li>
+							</ul>
+							<ul>
+								<li><b>Creativity:</b> ability to transcend traditional ideas, rules, patterns, relationships, or the like, and to create meaningful new ideas, forms, methods, interpretations, etc.; originality, progressiveness, or imagination.</li>
+							</ul>
+							<ul>
+								<li><b>Research:</b> diligent and systematic inquiry or investigation into a subject in order to discover or revise facts, theories, applications, etc.</li>
+							</ul>
+							<ul>
+								<li><b>Logic:</b> science that investigates the principles governing correct or reliable inference.</li>
+							</ul>
+							</p>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+
+		<!-- HELP MODAL -->
+		<div class="container">
+
+			<!-- Modal -->
+			<div class="modal fade" id="help-modal" role="dialog">
+				<div class="modal-dialog">
+
+					<!-- Modal content-->
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal">&times;</button>
+							<h4 class="modal-title">How to use SSC Electives Explorer</h4>
+						</div>
+						<div class="modal-body">
+							<p>
+								<ol>
+                                <li>
+                                You can search for specific electives on the left panel and we will return a list of electives that meet your specifications.
+                                <li>Once you find an elective that you're interested in, you can click on <i>Preview Skill Profile</i>. This will allow you to see how the elective will affect your skills profile, which is shown on the right panel.</li>
+                                <li><font color="blue">Blue</font> indicates the skills that you already have, and <font color="red">red</font> indicates the skills that you can add on to your skillset if you were to take the elective.</li>
+                                <li>Each category is broken down to skills (e.g. communication is broken down into writing and collaboration).</li>
+                                </li>
+                                </ol>
+							</p>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+
+        <div class="modal fade" id="add-course-confirmation" tabindex="-1" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title">Success!</h4>
+                    </div>
+                    <div id="add-course-confirmation-body" class="modal-body">
+                    </div>
+                    <div class="modal-footer">
+                        <span class="undo">Added this course by mistake? <a onclick="removeCourse();">Click here to remove it!</a></span>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+        </div><!-- /.modal -->
+    </body>
+</html>
+
+<!-- JS -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.0/js/select2.min.js"></script>
+<script src="http://d3js.org/d3.v3.min.js"></script>
+<script src="js/RadarChart.js"></script>
+<script src="js/prototype.js"></script>
+<!-- <script src="js/subjects.js"></script> -->
+<script src="js/courses.js"></script>
+<script src="js/skills.js"></script>
+
+<script>
+$(document).ready(function() {
+    $.each($(".collapse"), function() {
+        $(this).collapse("hide");
+    });
+
+    // for (var i = 0; i < subjects.length; ++i) {
+    //     $("#search-subject").append("<option>" + subjects[i]['abbrv'] + " : " + subjects[i]['title'] + "</option>");
+    // }
+
+    $("select").each(function(i, val) {
+        $("#" + val.id).select2({
+            closeOnSelect: false,
+            placeholder: $(val).prop("name")
+        });
+    });
+
+    $("#no-results-message").hide();
+    $("#search-results-table").hide();
+    $("[rel=tooltip]").tooltip({ placement : "right" });
+
+    initProgressBar();
+
+    if (prevCourses == prevCoursesTask1) {
+        $("#switch").attr("value", "Switch to Persona 2 - Don't touch this!");
+    } else if (prevCourses == prevCoursesTask2) {
+        $("#switch").attr("value", "Switch to Persona 1 - Don't touch this!");
+    }
+
+    $("#switch").click(function() {
+        if (prevCourses == prevCoursesTask1) {
+            prevCourses = prevCoursesTask2;
+            alert("Switching to Persona 2!");
+            $(this).attr("value", "Switch to Persona 1 - Don't touch this!");
+            initProgressBar();
+        } else if (prevCourses == prevCoursesTask2) {
+            prevCourses = prevCoursesTask1;
+            alert("Switching to Persona 1!");
+            $(this).attr("value", "Switch to Persona 2 - Don't touch this!");
+            initProgressBar();
+        }
+    });
+});
+</script>
