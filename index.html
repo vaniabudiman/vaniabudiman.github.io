@@ -1,164 +1,415 @@
 <!DOCTYPE html>
-<html>
+<html class="no-js" lang="en">
+
 <head>
-	<meta charset="UTF-8">
-	<title>Vania Budiman | Portfolio</title>
-	<link rel="stylesheet" href="css/style.css" type="text/css">
-	<link rel="stylesheet" href="css/normalise.css" type="text/css">
-	<link rel="icon" 
-      type="image/png" 
-      href="images/favicon.jpg">
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-	<script>
-	   function cycleImages(){
-      	var $active = $('#cycler .active');
-     	var $next = ($active.next().length > 0) ? $active.next() : $('#cycler img:first');
-      	$next.css('z-index',2);//move the next image up the pile
-      	$active.fadeOut(1500,function(){//fade out the top image
-	  	$active.css('z-index',1).show().removeClass('active');//reset the z-index and unhide the image
-          $next.css('z-index',3).addClass('active');//make the next image the top one
-      });
-    }
-
-		$(document).ready(function(){
-		// run every 7s
-		setInterval('cycleImages()', 7000);
-		})
-
-	</script>
-	<script>
-	     var sourceSwap = function () {
-        var $this = $(this);
-        var newSource = $this.data('alt-src');
-        $this.data('alt-src', $this.attr('src'));
-        $this.attr('src', newSource);
-    }
-
-    $(function() {
-        $('img[data-alt-src]').each(function() { 
-            new Image().src = $(this).data('alt-src'); 
-        }).hover(sourceSwap, sourceSwap); 
-    });
-	</script>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Vania Budiman | Portfolio</title>
+	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+	<link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet">
+    <link rel="stylesheet" href="libs/font-awesome/css/font-awesome.min.css">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
 </head>
+
 <body>
-	<div id="wrapper">
-	<div id="header">
-		<div>
-			<div id="logo">
-				<a href="index.html"><img src="images/website-logo.png" alt="LOGO"></a>
-			</div>
-			<ul id="navigation">
-				<li class="selected">
-					<a href="index.html">Home</a>
-				</li>
-				<li>
-					<a href="projects.html">Projects</a>
-				</li>
-				<li>
-					<a href="about.html">About</a>
-				</li>
-				<li>
-					<a href="http://ubclife.tumblr.com/" target="_blank">Blog</a>
-				</li>
-				<li>
-					<a href="contact.html">Contact</a>
-				</li>
-			</ul>
-		</div>
-	</div>
-	<div id="contents">
-		<div>
-			<div class="body">
-				<div id="abox">
-						<div id="cycler">
-							<img class="active" src="images/finallogo.jpg" />
-							<img src="images/finallogo2.jpg" />
-						</div>
-					<span class="info"><em></em> </span>
-					<div class="details">
-						<p>
-						<h1>A passion for logical<br>&amp; artistic creativity.<br></h1>
-						<p>
-							<p>
-							I am a fourth year Computer Science student from the University of British Columbia.
-						</p>
-					</div>
-				</div>
-				<ul id="featured">
-					<li>
-						<div>
-							<img data-alt-src="images/soft-dev-hover.png" src="images/a1.jpg" />
-						</div>
-						<div class="details">
-							<h4>Software Development</h4>
-							<p>
-								From making websites to mobile apps, I've gained a wide range of coding skills.
-							</p>
-						</div>
-					</li>
-					<li class="ui-design">
-						<div>
-							<img data-alt-src="images/photoshop-logo-hover.png" src="images/a2.jpg" />
-						</div>
-						<div class="details">
-							<h4>UI Design</h4>
-							<p>
-								Designing simple, beautiful and easy-to-use interfaces is a responsibility I value.
-							</p>
-						</div>
-					</li>
-					<li class="ux-research">
-						<div>
-							<img data-alt-src="images/ux-research-hover.png" src="images/a3.jpg" />
-						</div>
-						<div class="details">
-							<h4>UX Research</h4>
-							<p>
-								As I am interested in HCI, I am currently pursuing a minor in Psychology.
-							</p>
-						</div>
-					</li>
-				</ul>
-			</div>
-		</div>
-	</div>
-	<div id="footer">
-		<div>
-			<div id="links">
-			<ul class="navigation">
-				<li>
-					<a href="index.html">Home</a>
-				</li>
-				<li>
-					<a href="projects.html">Projects</a>
-				</li>
-				<li>
-					<a href="about.html">About</a>
-				</li>
-				<li>
-					<a href="http://ubclife.tumblr.com/" target="_blank">Blog</a>
-				</li>
-				<li>
-					<a href="contact.html">Contact</a>
-				</li>
-			</ul>
-			<p id="footnote">
-				Copyright © 2015 Vania Budiman
-			</p>
-		</div>
-	</div>
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    <div id="mobile-menu-open" class="shadow-large">
+        <i class="fa fa-bars" aria-hidden="true"></i>
+    </div>
+    <!-- End #mobile-menu-toggle -->
+    <header>
+        <div id="mobile-menu-close">
+            <span>Close</span> <i class="fa fa-times" aria-hidden="true"></i>
+        </div>
+        <ul id="menu" class="shadow">
+            <li>
+                <a href="#about">About</a>
+            </li>
+            <li>
+                <a href="#experience">Experience</a>
+            </li>
+            <li>
+                <a href="#education">Education</a>
+            </li>
+            <li>
+                <a href="#projects">Projects</a>
+            </li>
+            <li>
+                <a href="#skills">Skills</a>
+            </li>
+            <li>
+                <a href="#contact">Contact</a>
+            </li>
+        </ul>
+    </header>
+    <!-- End header -->
 
-  ga('create', 'UA-54510979-2', 'auto');
-  ga('send', 'pageview');
+    <div id="lead">
+        <div id="lead-content">
+            <h1>Vania Budiman</h1>
+            <h2>Software Developer & UX Designer/Researcher</h2>
+            <div id="social-links-container">
+                <ul class="social-links-list">
 
-</script>
-</script>
-</div>
+                    <li class="social-link">
+                        <a href="https://github.com/vaniabudiman" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
+                    </li>
+                    <li class="social-link">
+                        <a href="https://www.linkedin.com/in/vaniabudiman/" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+                    </li>
+                    <li class="social-link">
+                        <a href="https://twitter.com/VaniaVentures" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                    </li>
+                    <li class="social-link">
+                        <a href="https://www.tumblr.com/blog/ubclife" target="_blank"><i class="fa fa-tumblr" aria-hidden="true"></i></a>
+                    </li>
+
+                </ul>
+            </div>
+            <a href="resume_vania_budiman.pdf" class="btn-rounded-white">Download Resume</a>
+        </div>
+        <!-- End #lead-content -->
+
+        <div id="lead-overlay"></div>
+
+        <div id="lead-down">
+            <span>
+                <i class="fa fa-chevron-down" aria-hidden="true"></i>
+            </span>
+        </div>
+        <!-- End #lead-down -->
+    </div>
+    <!-- End #lead -->
+
+    <div id="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h2 class="heading">About Me</h2>
+                </div>
+                <div class="col-md-8">
+                    <p>
+                        I enjoy creating web and mobile applications. As a full-stack developer, I have completed 16 months of internships in companies such as SAP and EnerNOC.
+                    </p>
+                    <p>
+                        I recently graduated with a B.Sc. Computer Science from the University of British Columbia. During my studies, I specialized in software engineering with complementary interests in database design and user experience.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End #about -->
+
+    <div id="experience" class="background-alt">
+        <h2 class="heading">Experience</h2>
+        <div id="experience-timeline">
+
+            <div data-date="May 2016 – December 2016">
+                <h3>SAP</h3>
+                <h4>Software Developer (Intern)</h4>
+                <p>
+                    • Worked on SAP Jam, an enterprise social collaboration web app with 34+ million subscribers
+                    <br>• Full-stack web development with Ruby on Rails, JavaScript (Backbone.js, jQuery), MySQL, Sass
+                    <br>• Implemented workflow for uploading photos, videos, documents from postboxes to newsfeed
+                    <br>• Integrated personal data distributed across multiple tables from external sources
+                    <br>• Developed group admin feature of bulk managing 100,000+ group members simultaneously
+                    <br>• Demoed new features to 70+ member audience; wrote tests (QUnit, PhantomJS, Watir)
+                </p>
+            </div>
+
+            <div data-date="September 2014 – April 2015">
+                <h3>EnerNOC</h3>
+                <h4>Software Developer (Intern)</h4>
+                <p>
+                    • Developed responsive web apps in JavaScript (Node.js, Knockout, Promise.js, Angular, Express)
+                    <br>• Visualized energy data (D3.js, Highcharts); integrated utility-specific tracking (Google Analytics)
+                    <br>• Implemented energy dashboard theming for different utilities; created dashboard's landing page
+                    <br>• Wrote JavaScript unit & integration tests (Expect.js, Sinon, Mocha); automated Python tests
+                    <br>• Interviewed 17 applicants for software developer internships in web app & platform teams
+                    <br>• Delivered energy analytics dashboards to 6 energy utilities (BC Hydro, Ergon Energy, etc.)
+                </p>
+            </div>
+        </div>
+    </div>
+    <!-- End #experience -->
+
+    <div id="education">
+        <h2 class="heading">Education</h2>
+        <div class="education-block">
+            <h3>Bachelor of Science in Computer Science</h3>
+            <span class="education-date">2012 - 2017</span>
+            <h4>Minor in Psychology, University of British Columbia</h4>
+        </div>
+        <!-- End .education-block -->
+
+    </div>
+    <!-- End #education -->
+
+    <div id="projects" class="background-alt">
+        <h2 class="heading">Projects</h2>
+        <div class="container">
+            <div class="row">
+
+                <div class="project shadow-large">
+                    <div class="project-image">
+                        <img src="images/project/planit.png" />
+                    </div>
+                    <!-- End .project-image -->
+                    <div class="project-info">
+                        <h3>PlanIt: Trip Planning Android App</h3>
+                        <h4 class="tech-stack">JavaScript (React Native), Python (Flask), SQLite</h4>
+                        <p>
+                            • Worked on search for tourist attractions (Google Places API); attractions can be bookmarked & converted into events for trips
+                            <br>• Developed event filtering: using search bar, picking calendar date, selecting map marker
+                            <br>• Implemented REST API calls for adding, deleting, editing bookmarks & events
+                            <br>• Implemented offline mode using local persistent storage (Realm DB) which allows users to view trips, bookmarks, events, and transportation details without Internet connection
+                        </p>
+                        <a href="www.youtube.com/watch?v=3NAfAnQwuWY">Video Demo</a>
+                    </div>
+                    <!-- End .project-info -->
+                </div>
+                <!-- End .project -->
+
+                <div class="project shadow-large">
+                    <div class="project-image">
+                        <img src="images/project/hsbc.png" />
+                    </div>
+                    <!-- End .project-image -->
+                    <div class="project-info">
+                        <h3>HSBC Desk Reservation Web App</h3>
+                        <h4 class="tech-stack">JavaScript (React, Redux, Node.js), MySQL</h4>
+                        <p>
+                            • Led weekly meetings with HSBC stakeholders who requested the reservation system; appointed as project & development manager; managed team of 6 other developers
+                            <br>• Implemented adding, editing, deleting locations; users can add desks into these locations
+                            <br>• Wrote Mocha tests for operations on locations; interface is mobile-friendly & responsive
+                            <br>• Added zoomable map; system displays a map that corresponds to the floor user selects
+                        </p>
+                    </div>
+                    <!-- End .project-info -->
+                </div>
+                <!-- End .project -->
+
+                <div class="project shadow-large">
+                    <div class="project-image">
+                        <img src="images/project/api_ai.png" />
+                    </div>
+                    <!-- End .project-image -->
+                    <div class="project-info">
+                        <h3>SAP Jam Voice-Enabled User Interface (Hackathon)</h3>
+                        <h4 class="tech-stack">JavaScript (Backbone.js), Ruby on Rails</h4>
+                        <p>
+                            • Provided Jam with a conversational voice-enabled interface by integrating Api.ai into Jam
+                            <br>• Text-to-speech summary & UI display of elastic searches performed by user on Jam
+                            <br>• App can parse audible queries from the user & turn them into commands for Jam to act
+                            <br>• Api.ai service has the notion of contexts, so that users can provide follow-up queries for the service to act on (e.g. dismissing a notification that has been read to the user)
+                        </p>
+                    </div>
+                    <!-- End .project-info -->
+                </div>
+                <!-- End .project -->
+
+                <div class="project shadow-large">
+                    <div class="project-image">
+                        <img src="images/project/meals_on_wheels.png" />
+                    </div>
+                    <!-- End .project-image -->
+                    <div class="project-info">
+                        <h3>Meals on Wheels</h3>
+                        <h4 class="tech-stack">Python (Django), JavaScript (jQuery)</h4>
+                        <p>
+                            • Parsed food truck data from City of Vancouver and plotted their locations on a map
+                            <br>• Users can register, login, and change their profile settings
+                            <br>• View Instagram photos associated with each food truck
+                            <br>• Users can rate food trucks; recommendation system based on users' ratings
+                            <br>• Food trucks searches can be filtered by name, type of food, and radius with specified address
+                        </p>
+                        <a href="www.github.com/vaniabudiman/Meals-On-Wheels">GitHub</a>
+                    </div>
+                    <!-- End .project-info -->
+                </div>
+                <!-- End .project -->
+
+                <div class="project shadow-large">
+                    <div class="project-image">
+                        <img src="images/project/etude.png" />
+                    </div>
+                    <!-- End .project-image -->
+                    <div class="project-info">
+                        <h3>Etude » UI/UX Design</h3>
+                        <h4 class="tech-stack">JavaScript (jQuery)</h4>
+                        <p>
+                            • Web application prototype; allows students to search, create, and join study sessions
+                            <br>• Ran field studies with 16 participants using questionnaires and interviews
+                            <br>• Conducted usability tests with 8 participants; video-recorded observations & interviews
+                            <br>• Ran statistical analysis on the user data using paired t-tests in R
+                        </p>
+                        <a href="www.readpapr.com/etude">Live Site</a> | <a href="www.studybuddycs444.wordpress.com">Process</a>
+                    </div>
+                    <!-- End .project-info -->
+                </div>
+                <!-- End .project -->
+
+                <div class="project shadow-large">
+                    <div class="project-image">
+                        <img src="images/project/electives_explorer.png" />
+                    </div>
+                    <!-- End .project-image -->
+                    <div class="project-info">
+                        <h3>Electives Explorer » UI/UX Design</h3>
+                        <h4 class="tech-stack">JavaScript (jQuery)</h4>
+                        <p>
+                            • Med-fidelity prototype; supports users in choosing electives based on skills & interests
+                            <br>• Conducted usability testing (10 users); interviews & video-recorded observations
+                            <br>• Prototype allows users to search for electives & encourages search based on skill profile
+                            <br>• Prototype gives users a preview of how a given course will affect their skill profile
+                        </p>
+                        <a href="www.youtube.com/watch?v=iIgzlOHXpaE">Video Overview</a>
+                    </div>
+                    <!-- End .project-info -->
+                </div>
+                <!-- End .project -->
+
+                <div class="project shadow-large">
+                    <div class="project-image">
+                        <img src="images/project/humans_of_gastown.jpg" />
+                    </div>
+                    <!-- End .project-image -->
+                    <div class="project-info">
+                        <h3>Humans of Gastown » UI/UX Design</h3>
+                        <p>
+                            • Designed website's header and icons using Photoshop CS6
+                            <br>• Interviewed clients (Gastown Business Improvement Society)
+                            <br>• Worked within a team of four towards a project to promote businesses in Gastown
+                            <br>• Conducted user research with 29 users (15 oral interviewees, 14 online survey takers)
+                            <br>• Recruited 15 participants as the initial "Humans of Gastown"; interviewed them
+                            <br>• Designed paper prototypes for the UI
+                        </p>
+                        <a href="www.github.com/DaDanny/HoG">GitHub</a>
+                    </div>
+                    <!-- End .project-info -->
+                </div>
+                <!-- End .project -->
+
+                <div class="project shadow-large">
+                    <div class="project-image">
+                        <img src="images/project/clinic_db.jpg" />
+                    </div>
+                    <!-- End .project-image -->
+                    <div class="project-info">
+                        <h3>Clinic Database</h3>
+                        <h4 class="tech-stack">SQL, PHP, HTML, CSS</h4>
+                        <p>
+                            • Clinic website with three unique UIs and privileges for doctors, receptionists, patients
+                            <br>• Wrote SQL queries for selecting/projecting, joining, dividing, aggregating
+                            <br>• SQL operations to update, insert, delete information from database
+                            <br>• GUI made with PHP, HTML and CSS (Bootstrap framework)
+                            <br>• Features include: login, checks for valid user inputs, and map using Google Map API
+                            <br>• Collaborated in a group of four through Github
+                        </p>
+                        <a href="www.github.com/VaniaBudiman/Clinic">GitHub</a>
+                    </div>
+                    <!-- End .project-info -->
+                </div>
+                <!-- End .project -->
+
+                <div class="project shadow-large">
+                    <div class="project-image">
+                        <img src="images/project/waldo.png" />
+                    </div>
+                    <!-- End .project-image -->
+                    <div class="project-info">
+                        <h3>Friend Finder (Android App)</h3>
+                        <h4 class="tech-stack">Java</h4>
+                        <p>
+                            • Parsed live data from Translink service presented in XML and JSON format
+                            <br>• Used GPS to track users within a geographical area; plotted locations of users on a map
+                            <br>• Used live bus info from Translink to determine best bus routes; plotted routes on map
+                            <br>• Implemented a messaging dialogue that allowed users to send and receive messages
+                            <br>• Wrote a robust implementation with appropriate exceptions thrown; created JUnit tests
+                            <br>• Developed application using emulator and Android device
+                        </p>
+                    </div>
+                    <!-- End .project-info -->
+                </div>
+                <!-- End .project -->
+            </div>
+        </div>
+    </div>
+    <!-- End #projects -->
+
+    <div id="skills">
+        <h2 class="heading">Skills</h2>
+        <ul>
+            <li>JavaScript</li>
+            <li>Python</li>
+            <li>Ruby</li>
+            <li>Node.js</li>
+            <li>AngularJs</li>
+            <li>React</li>
+            <li>Java</li>
+            <li>C</li>
+            <li>C++</li>
+            <li>Ruby on Rails</li>
+            <li>SQL</li>
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>Git</li>
+        </ul>
+    </div>
+    <!-- End #skills -->
+
+    <div id="contact">
+        <h2>Get in Touch</h2>
+        <div id="contact-form">
+            <form method="POST" action="https://formspree.io/budimanvania@gmail.com">
+                <input type="hidden" name="_subject" value="Contact request from personal website" />
+                <input type="email" name="_replyto" placeholder="Your email" required>
+                <textarea name="message" placeholder="Your message" required></textarea>
+                <button type="submit">Send</button>
+            </form>
+        </div>
+        <!-- End #contact-form -->
+    </div>
+    <!-- End #contact -->
+
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-5 copyright">
+                    <p>
+                        Copyright &copy; 2017 Vania Budiman
+                    </p>
+                </div>
+                <div class="col-sm-2 top">
+                    <span id="to-top">
+                        <i class="fa fa-chevron-up" aria-hidden="true"></i>
+                    </span>
+                </div>
+                <div class="col-sm-5 social">
+                    <ul>
+                        <li>
+                            <a href="https://github.com/vaniabudiman" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
+                        </li>
+                        <li>
+                            <a href="https://www.linkedin.com/in/vaniabudiman/" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+                        </li>
+                        <li>
+                            <a href="https://twitter.com/VaniaVentures" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                        </li>
+                        <li>
+                            <a href="https://www.tumblr.com/blog/ubclife" target="_blank"><i class="fa fa-tumblr" aria-hidden="true"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- End footer -->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="js/scripts.min.js"></script>
 </body>
+
 </html>
