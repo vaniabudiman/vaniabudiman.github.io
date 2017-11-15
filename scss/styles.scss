@@ -401,6 +401,7 @@ footer {
 
             i {
                 color: #fff;
+                padding: 0px 5px 0px 5px;
             }
         }
     }
@@ -697,8 +698,10 @@ footer {
 
     .tech-stack {
         margin-bottom: 15px;
-        font-weight: 400;
+        font-weight: 300;
         margin-top: 0;
+        color: #7e8890;
+        font-size: 1em;
     }
 }
 
@@ -713,6 +716,28 @@ footer {
 
 #more-projects {
     display: none;
+}
+
+#project-filter {
+    padding: 0px 15px 30px;
+
+    ul {
+        display: block;
+        margin: 0 auto;
+        padding: 0;
+        max-width: 800px;
+    }
+
+    li {
+        display: inline-block;
+        margin: 7px;
+        padding: 5px 10px;
+        color: #fff;
+        background: $base-color;
+        list-style: none;
+        cursor: default;
+        font-size: 1.1em;
+    }
 }
 
 /*
