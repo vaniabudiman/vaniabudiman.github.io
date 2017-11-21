@@ -728,12 +728,19 @@ footer {
         max-width: 800px;
     }
 
+    #toggle-all {
+        background: #7dbde8;
+    }
+
+    #toggle-web, #toggle-mobile, #toggle-ux {
+        background: $base-color;
+    }
+
     li {
         display: inline-block;
         margin: 7px;
         padding: 5px 10px;
         color: #fff;
-        background: $base-color;
         list-style: none;
         font-size: 1.1em;
         cursor: pointer;
