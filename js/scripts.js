@@ -99,6 +99,8 @@
         $(".web-project").show(700);
         $(".mobile-project").hide(700);
         $(".ux-project").hide(700);
+        $(this).css("background-color", "#7dbde8");
+        $("#toggle-mobile, #toggle-ux, #toggle-all").css("background-color", "#3498db");
     });
 
     // Display mobile projects only
@@ -106,6 +108,8 @@
         $(".web-project").hide(700);
         $(".mobile-project").show(700);
         $(".ux-project").hide(700);
+        $(this).css("background-color", "#7dbde8");
+        $("#toggle-web, #toggle-ux, #toggle-all").css("background-color", "#3498db");
     });
 
     // Display UX/UI design prototypes only
@@ -113,6 +117,8 @@
         $(".web-project").hide(700);
         $(".mobile-project").hide(700);
         $(".ux-project").show(700);
+        $(this).css("background-color", "#7dbde8");
+        $("#toggle-mobile, #toggle-web, #toggle-all").css("background-color", "#3498db");
     });
 
     // Display all projects
@@ -120,5 +126,7 @@
         $(".web-project").show(700);
         $(".mobile-project").show(700);
         $(".ux-project").show(700);
+        $(this).css("background-color", "#7dbde8");
+        $("#toggle-mobile, #toggle-ux, #toggle-web").css("background-color", "#3498db");
     });
 })(jQuery);
