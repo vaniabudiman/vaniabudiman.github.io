@@ -94,4 +94,31 @@
         });
     });
 
+    // Display web projects only
+    $("#toggle-web").click(function() {
+        $(".web-project").show(700);
+        $(".mobile-project").hide(700);
+        $(".ux-project").hide(700);
+    });
+
+    // Display mobile projects only
+    $("#toggle-mobile").click(function() {
+        $(".web-project").hide(700);
+        $(".mobile-project").show(700);
+        $(".ux-project").hide(700);
+    });
+
+    // Display UX/UI design prototypes only
+    $("#toggle-ux").click(function() {
+        $(".web-project").hide(700);
+        $(".mobile-project").hide(700);
+        $(".ux-project").show(700);
+    });
+
+    // Display all projects
+    $("#toggle-all").click(function() {
+        $(".web-project").show(700);
+        $(".mobile-project").show(700);
+        $(".ux-project").show(700);
+    });
 })(jQuery);
